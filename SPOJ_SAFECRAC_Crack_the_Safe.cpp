@@ -22,6 +22,7 @@ int pass[11][100000] = {0}; // keep passcode count in this array . once computed
 int N;
 int main()
 {
+	std::ios_base::sync_with_stdio(false); //  makes I/O faster
 #ifdef _WIN32
 	freopen("SPOJ_SAFECRAC_Crack_the_Safe.txt", "r", stdin);
 #endif
