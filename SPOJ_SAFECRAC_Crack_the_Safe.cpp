@@ -38,12 +38,10 @@ int main()
 	while (T--)
 	{
 		cin >> N;
-		for (int j = 2; j <= N; j++)
+		for (int j = done_count + 1; j <= N; j++)
 		{
 			int count = 0;
-			if (j > done_count)
-			{
-				for (int i = 0; i <= 9; i++)
+			 for (int i = 0; i <= 9; i++)
 				{
 					int sum = 0;
 					////nbr loop
@@ -61,7 +59,7 @@ int main()
 				}//for i
 				pass[10][j] = count; 
 				done_count++;
-			}//if
+			
 		}
 		
 		cout << pass[10][N] << endl;
