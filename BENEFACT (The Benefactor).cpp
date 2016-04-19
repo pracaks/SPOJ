@@ -1,4 +1,5 @@
 #if 1
+/*To find Longest path convert all weights as neagative and find shortest path. shortest in -ve will be Longest in +ve.*/
 #include <iostream>
 #include <string.h>
 #include <vector>
