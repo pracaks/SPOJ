@@ -1,5 +1,4 @@
 #if 1
-/////ACCEptede with ADJ MAtrix as vector 
 #include <iostream>
 #include <cstdio>
 #include <cstring>
