@@ -1,5 +1,6 @@
 #if 1
-/*To find Longest path convert all weights as neagative and find shortest path. shortest in -ve will be Longest in +ve.*/
+/*To find Longest path convert all weights as negative and find shortest path with Dijkastra. shortest in -ve will be Longest in +ve 
+apply Dijkastra  for all nodes which have Degree 1 leaf node. */
 #include <iostream>
 #include <string.h>
 #include <vector>
