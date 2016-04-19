@@ -9,6 +9,7 @@ http://www.spoj.com/problems/CHMAZE/
 ****/
 #define SIZE 21
 #define SZ_PAT 11
+const int OPEN=1;
 typedef struct __node{
 int x;
 int y;
@@ -19,9 +20,6 @@ NODE que[SIZE*SIZE];
 int to_read = 0;
 int to_write = 0;
 int mat[SZ_PAT][SIZE][SIZE];
-//bool visited [PAT][SIZE][SIZE];
-
-//#define TEST
 int dx[] = {0,0,0,1,-1};
 int dy[] = {0,1,-1,0,0};
 int ROW,COL,PAT;
@@ -47,7 +45,7 @@ int bfs( int r, int c , int p)
 			v.x = u.x + dx[i];
 			v.y = u.y + dy[i];
 			v.pat = (u.pat+1)%PAT;
-			if(mat[v.pat][v.x][v.y]==1 &&level[v.pat][v.x][v.y]==0)
+			if( mat[v.pat][v.x][v.y] == OPEN && level[v.pat][v.x][v.y] == 0 )
 			{
 				level[v.pat][v.x][v.y] = level[u.pat][u.x][u.y] + 1;
 				if(v.x == ROW && v.y==COL)
@@ -65,7 +63,7 @@ int bfs( int r, int c , int p)
 
 int main()
 {
-#ifdef TEST	
+#ifdef _WIN32	
 	freopen("CHMAZE_input.txt","r",stdin);
 #endif
 	
@@ -87,7 +85,7 @@ int main()
 				{
 					char ch;
 					cin>>ch;
-					mat[p][i][j]  = ch -'0' + 1;
+					mat[p][i][j]  = ch -'0' + 1;  // '0' => 1 open '1' =>2 Wall
 				}
 			}
 		}
