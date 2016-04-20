@@ -31,33 +31,33 @@ int main()
 	int done_count = 0;
 	for (int i = 0; i<= 9; i++)
 	{
-		pass[i][1] = 1;
+		pass[i][1] = 1;   /// 1 lenght password are 1 in total Initialize that first
 	}
-	pass[10][1] = 10;// sum
+	pass[10][1] = 10; //  Initial total sum for all 1 length password
 	done_count = 1;
 	while (T--)
 	{
 		cin >> N;
-		for (int j = done_count + 1; j <= N; j++)
+		for (int pLen = done_count + 1; pLen <= N; pLen++)
 		{
 			int count = 0;
-			 for (int i = 0; i <= 9; i++)
+			 for (int no = 0; no <= 9; no++)
 				{
 					int sum = 0;
 					////nbr loop
 					for (int k = 0; k < 4;k++) 
 					{
-						if (nbr[i][k] == -1)
+						if (nbr[no][k] == -1)
 							break;
 						else
 						{
-							sum = ( sum%MOD + pass[nbr[i][k]][j - 1]% MOD) % MOD;
+							sum = ( sum%MOD + pass[nbr[no][k]][pLen - 1]% MOD) % MOD; /// need to add neighbours count of password of lenght lesser by ONE
 						}
 					}//for k
-					pass[i][j] = sum;
-					count = (count%MOD + pass[i][j]% MOD)% MOD; //accumulte sum 
+					pass[no][pLen] = sum;
+					count = (count%MOD + pass[no][pLen]% MOD)% MOD; //accumulte sum 
 				}//for i
-				pass[10][j] = count; 
+				pass[10][pLen] = count;
 				done_count++;
 			
 		}
