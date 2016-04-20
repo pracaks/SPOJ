@@ -3,8 +3,7 @@
 #include <iostream>
 #include <cstdio>
 using namespace std;
-#define TEST
-#define SZ 10005
+int const SZ = 10005
 int mat[SZ][SZ];
 bool visited[SZ];
 long long  path[SZ];
@@ -57,8 +56,8 @@ long long  count_path(int u , int ed ,int parent)
 }
 int main()
 {
-#ifdef TEST
-//	freopen("KFSTB_cont_input.txt","r",stdin);
+#ifdef _WIN32
+	freopen("KFSTB_cont_input.txt","r",stdin);
 #endif
 	int T;
 	cin>>T;
@@ -72,7 +71,7 @@ int main()
 		{
 			int x,y;
 			cin>>x>>y;
-			mat[x][y]=1;				
+			mat[x][y]=1;	///directed one way			
 		}
 		long long path_count = 0;
 		visited[st]=true;
