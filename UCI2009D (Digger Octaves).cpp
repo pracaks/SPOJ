@@ -22,7 +22,6 @@ using namespace std;
 char mat[SZ][SZ];
 #define AXE 'X'
 #define DOT '.'
-int octave = 0;
 int N;
 typedef struct {
 	int x;
@@ -67,12 +66,11 @@ string mysort(void)
 }
 int dx[] = {-1,0,1, 0};
 int dy[] = { 0,1,0,-1};
-set<string>my;
+set<string>my;  ////set is required to avoid same entries.
 void count_oct(int ux, int uy, int done)
 {
 	if (done == OCT)
 	{
-		octave++;
 		//// sort pt array
 		 string ss = mysort();
 		 my.insert(ss);
@@ -100,7 +98,6 @@ void SPOJ_UCI2009D_Digger_Octaves(void)
 	while (T--)
 	{
 		cin >> N;
-		octave = 0;
 		my.clear();
 		pt[1].x = pt[1].y = pt[2].x = pt[2].y = pt[3].x = pt[3].y = pt[4].x = pt[4].y = 0;
 		pt[5].x = pt[5].y = pt[6].x = pt[6].y = pt[7].x = pt[7].y = pt[8].x = pt[8].y = 0;
