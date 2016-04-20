@@ -1,6 +1,7 @@
 #if 1
 /*AC in first attempt . form nbr list we can easily calculate ex from 4 we can go 1 5 7  2 length paths from 1 will be 1 + 1 + 1
-=3    when we have to count 3 len path from a no see all neighbours and accummulate their 2 len path count */
+=3    when we have to count 3 len path from a no see all neighbours and accummulate their 2 len path count
+BASIC conting with Memoization*/
 #include <iostream>
 #include <cstdio>
 using namespace std;
